@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "siam-piwat-mappedin-example-android"

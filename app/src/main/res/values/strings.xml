@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SiamPiwatIndoorMapAndroidDemo</string>
+
+    <string name="activity_main_tv_title">Indoor map demo</string>
+    <string name="activity_main_tv_status_init">Initialize</string>
+    <string name="activity_main_tv_status_get_venue">Getting venue</string>
+    <string name="activity_main_tv_status_ready">Map is ready</string>
+    <string name="activity_main_btn_map">Map</string>
+
+</resources>
