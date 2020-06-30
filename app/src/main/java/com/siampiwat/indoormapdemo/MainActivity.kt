@@ -3,13 +3,10 @@ package com.siampiwat.indoormapdemo
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import com.siampiwat.indoormapsdk.IndoorMapSDK
 import com.siampiwat.indoormapsdk.data.appenum.SPWDepartmentStoreType
+import com.siampiwat.indoormapsdk.data.model.SPWAISLocation
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,21 +43,31 @@ class MainActivity : AppCompatActivity() {
                 /////////////////////////////////////////////////////
 
                 /////////////////////////////////////////////////////
-                // Set origin store
+                // Set origin by store
                 /////////////////////////////////////////////////////
-                IndoorMapSDK.getInstance().setOriginStore(stores[0])
-                /////////////////////////////////////////////////////
-
-                /////////////////////////////////////////////////////
-                // Set origin store
-                /////////////////////////////////////////////////////
-                IndoorMapSDK.getInstance().setDestinationStore(stores[1])
+                // IndoorMapSDK.getInstance().setOriginByStore(stores[0])
                 /////////////////////////////////////////////////////
 
                 /////////////////////////////////////////////////////
-                // Start Indoor map
+                // Set origin by user's location
+                /////////////////////////////////////////////////////
+                val userLocation =
+                    SPWAISLocation(
+                        isIndoor = true,
+                        latitude = 13.746600,
+                        longitude = 100.534307,
+                        buildId = "4409",
+                        buildName = "Siam Paragon",
+                        floorId = "8288",
+                        floorNumber = "0"
+                    )
+                IndoorMapSDK.getInstance().setOriginByLocation(userLocation)
                 /////////////////////////////////////////////////////
 
+                /////////////////////////////////////////////////////
+                // Set destination by store
+                /////////////////////////////////////////////////////
+                IndoorMapSDK.getInstance().setDestinationByStore(stores[1])
                 /////////////////////////////////////////////////////
             }
 
