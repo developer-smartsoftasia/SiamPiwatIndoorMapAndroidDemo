@@ -18,8 +18,8 @@ allprojects {
 4. Add dependency of Indoor SDK as below
 ```
 dependencies {
-...
-implementation 'com.siampiwat:indoormapsdk:0.0.9'
+  ...
+  implementation 'com.siampiwat:indoormapsdk:0.1.0'
 }
 
 ```
