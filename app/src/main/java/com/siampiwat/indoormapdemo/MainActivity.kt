@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         // Initialize SDK
         /////////////////////////////////////////////////////
         textview_status.text = getString(R.string.activity_main_tv_status_init)
-        IndoorMapSDK.initialize(SPWDepartmentStoreType.SIAM_PARAGON, "")
+        val jsonString = AssetHelper.readJsonString(this, "shop.json")
+        IndoorMapSDK.initialize(SPWDepartmentStoreType.SIAM_PARAGON, jsonString!!)
         /////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////
