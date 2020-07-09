@@ -19,7 +19,7 @@ allprojects {
 ```
 dependencies {
   ...
-  implementation 'com.siampiwat:indoormapsdk:0.1.0'
+  implementation 'com.siampiwat:indoormapsdk:0.1.1'
 }
 
 ```
@@ -62,18 +62,19 @@ This function for selecting the department store type and importing the json str
 ##### Required Parameters
 | Name | Type | Description |
 | ---- | ---- | ------ |
-| swpDepartmentStoreType | String | The type of SWP department store |
+| swpDepartmentStoreType | String | The type of SWPDepartmentStore |
 | stores | String | The json string of stores |
+| spwLanguage | String | The code of SPWLanguage |
 
 ##### Code
 ```
-IndoorMapSDK.initialize(swpDepartmentStoreType, stores);
+IndoorMapSDK.initialize(swpDepartmentStoreType, stores, spwLanguage);
 ```
 
 ##### Example
 ```
 var jsonString = /* json string of stores */
-IndoorMapSDK.initialize(SWPDepartmentStoreType.SIAM_PARAGON, jsonString)
+IndoorMapSDK.initialize(SWPDepartmentStoreType.SIAM_PARAGON, jsonString, SPWLanguage.TH)
 ```
 
 #### - getVenue()
