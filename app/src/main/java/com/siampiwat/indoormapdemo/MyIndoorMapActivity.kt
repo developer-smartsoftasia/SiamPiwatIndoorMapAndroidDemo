@@ -5,7 +5,7 @@ import android.os.Handler
 import android.util.Log
 import com.siampiwat.indoormapsdk.IndoorMapSDK
 import com.siampiwat.indoormapsdk.data.model.SPWAISLocation
-import com.siampiwat.indoormapsdk.presentation.indoormap.IndoorMapActivity
+import com.siampiwat.indoormapsdk.presentation.view.indoormap.IndoorMapActivity
 
 class MyIndoorMapActivity : IndoorMapActivity() {
 

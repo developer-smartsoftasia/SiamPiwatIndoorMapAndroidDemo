@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.siampiwat.indoormapsdk.IndoorMapSDK
+import com.siampiwat.indoormapsdk.data.appenum.SPWApplicationSlug
 import com.siampiwat.indoormapsdk.data.appenum.SPWDepartmentStoreType
 import com.siampiwat.indoormapsdk.data.appenum.SPWLanguage
 import com.siampiwat.indoormapsdk.data.model.SPWAISLocation
@@ -26,7 +27,12 @@ class MainActivity : AppCompatActivity() {
         /////////////////////////////////////////////////////
         textview_status.text = getString(R.string.activity_main_tv_status_init)
         val jsonString = AssetHelper.readJsonString(this, "shop.json")
-        IndoorMapSDK.initialize(SPWDepartmentStoreType.SIAM_PARAGON, jsonString!!, SPWLanguage.TH)
+        IndoorMapSDK.initialize(
+            spwApplicationSlug = SPWApplicationSlug.ONE_SIAM,
+            stores = jsonString!!,
+            spwLanguage = SPWLanguage.TH,
+            debug = true
+        )
         /////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////
