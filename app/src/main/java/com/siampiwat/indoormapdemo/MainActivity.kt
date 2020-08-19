@@ -33,49 +33,49 @@ class MainActivity : AppCompatActivity() {
             spwLanguage = SPWLanguage.TH,
             debug = true
         )
+        Log.i(TAG, "Initialize the IndoorMapSDK")
         /////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////
         // Get Venue
         /////////////////////////////////////////////////////
         textview_status.text = getString(R.string.activity_main_tv_status_get_venue)
+        Log.i(TAG, "Getting venue")
         IndoorMapSDK.getInstance().getVenue(object : IndoorMapSDK.GetVenueCallback {
             override fun onSuccess() {
                 textview_status.text = getString(R.string.activity_main_tv_status_ready)
                 button_map.isEnabled = true
 
                 /////////////////////////////////////////////////////
-                // Get all stores
+                // Get current department store
+                /////////////////////////////////////////////////////
+                val currentDepartmentStore = IndoorMapSDK.getInstance().getDepartmentStore()
+                Log.i(TAG, "Current department store : $currentDepartmentStore")
+                /////////////////////////////////////////////////////
+
+                /////////////////////////////////////////////////////
+                // Set department store to 'SPWDepartmentStoreType.SIAM_DISCOVERY'
+                /////////////////////////////////////////////////////
+                val spwDepartmentStore = IndoorMapSDK.getInstance()
+                    .getDepartmentStoreBySlug(SPWDepartmentStoreType.SIAM_DISCOVERY)
+                spwDepartmentStore?.let {
+                    Log.i(TAG, "Set department store to : $it")
+                    IndoorMapSDK.getInstance().setDepartmentStore(it)
+                }
+                /////////////////////////////////////////////////////
+
+                /////////////////////////////////////////////////////
+                // Get all stores from current department store
                 /////////////////////////////////////////////////////
                 val stores = IndoorMapSDK.getInstance().getStores()
-                /////////////////////////////////////////////////////
-
-                /////////////////////////////////////////////////////
-                // Set origin by store
-                /////////////////////////////////////////////////////
-                // IndoorMapSDK.getInstance().setOriginByStore(stores[0])
-                /////////////////////////////////////////////////////
-
-                /////////////////////////////////////////////////////
-                // Set origin by user's location
-                /////////////////////////////////////////////////////
-                val userLocation =
-                    SPWAISLocation(
-                        isIndoor = true,
-                        latitude = 13.746600,
-                        longitude = 100.534307,
-                        buildId = "4409",
-                        buildName = "Siam Paragon",
-                        floorId = "8288",
-                        floorNumber = "0"
-                    )
-                IndoorMapSDK.getInstance().setOriginByLocation(userLocation)
+                Log.i(TAG, "Get stores from current department store : ${stores.size}")
                 /////////////////////////////////////////////////////
 
                 /////////////////////////////////////////////////////
                 // Set destination by store
                 /////////////////////////////////////////////////////
-                IndoorMapSDK.getInstance().setDestinationByStore(stores[1])
+                IndoorMapSDK.getInstance().setDestinationByStore(stores[0])
+                Log.i(TAG, "Set destination as : ${stores[0]}")
                 /////////////////////////////////////////////////////
             }
 
