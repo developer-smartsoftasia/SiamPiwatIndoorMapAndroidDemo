@@ -19,7 +19,7 @@ allprojects {
 ```
 dependencies {
   ...
-  implementation 'com.siampiwat:indoormapsdk:0.3.0'
+  implementation 'com.siampiwat:indoormapsdk:0.3.3'
 }
 
 ```
@@ -243,6 +243,61 @@ IndoorMapSDK.getInstance().getClosestStore(spwAISLocation)
 ##### Example
 ```
 var store = IndoorMapSDK.getInstance().getClosestStore(spwAISLocation)
+```
+
+#### - getDepartmentStore()
+This function for getting the current department store
+
+##### Required Parameters
+| Name | Type | Description |
+| ---- | ---- | ------ |
+| - | - | - |
+
+##### Code
+```
+IndoorMapSDK.getInstance().getDepartmentStore()
+```
+
+##### Example
+```
+var spwDepartmentStore = IndoorMapSDK.getInstance().getDepartmentStore()
+```
+
+#### - getDepartmentStoreBySlug()
+This function for getting the department store by slug
+
+##### Required Parameters
+| Name | Type | Description |
+| ---- | ---- | ------ |
+| slug | String | The type of SPWDepartmentStore |
+
+##### Code
+```
+IndoorMapSDK.getInstance().getDepartmentStoreBySlug(SPWDepartmentStoreType.SIAM_PARAGON)
+```
+
+##### Example
+```
+var spwDepartmentStore = IndoorMapSDK.getInstance().getDepartmentStoreBySlug(SPWDepartmentStoreType.SIAM_PARAGON)
+```
+
+#### - setDepartmentStore()
+This function for setting the department store by SPWDepartmentStore
+
+##### Required Parameters
+| Name | Type | Description |
+| ---- | ---- | ------ |
+| spwDepartmentStore | SPWDepartmentStore | The SPWDepartmentStore object |
+
+##### Code
+```
+IndoorMapSDK.getInstance().setDepartmentStore(spwDepartmentStore)
+```
+
+##### Example
+```
+var spwDepartmentStore = IndoorMapSDK.getInstance().getDepartmentStoreBySlug(SPWDepartmentStoreType.SIAM_PARAGON)
+IndoorMapSDK.getInstance().getDepartmentStoreBySlug(spwDepartmentStore)
 ```
 
 ### (2) View
