@@ -27,7 +27,6 @@ class MyIndoorMapActivity : IndoorMapActivity() {
         super.onCreate(savedInstanceState)
         Handler().postDelayed({
             setUserLocation()
-            getClosestStore()
         }, 5000)
     }
 
@@ -36,17 +35,6 @@ class MyIndoorMapActivity : IndoorMapActivity() {
     /////////////////////////////////////////////////////
     private fun setUserLocation() {
         IndoorMapSDK.getInstance().setUserLocation(userLocation)
-    }
-    /////////////////////////////////////////////////////
-
-    /////////////////////////////////////////////////////
-    // Get closest store by location
-    /////////////////////////////////////////////////////
-    private fun getClosestStore() {
-        val store = IndoorMapSDK.getInstance().getClosestStore(userLocation)
-        store?.let {
-            Log.i(TAG, "Closest store : $store")
-        }
     }
     /////////////////////////////////////////////////////
 

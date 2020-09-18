@@ -72,10 +72,19 @@ class MainActivity : AppCompatActivity() {
                 /////////////////////////////////////////////////////
 
                 /////////////////////////////////////////////////////
+                // Set origin by store
+                /////////////////////////////////////////////////////
+                // IndoorMapSDK.getInstance().setOriginByStore(stores[0])
+                // Log.i(TAG, "Set origin as : ${stores[0]}")
+                /////////////////////////////////////////////////////
+
+                /////////////////////////////////////////////////////
                 // Set destination by store
                 /////////////////////////////////////////////////////
-                IndoorMapSDK.getInstance().setDestinationByStore(stores[0])
-                Log.i(TAG, "Set destination as : ${stores[0]}")
+                if (stores.isNotEmpty()) {
+                    IndoorMapSDK.getInstance().setDestinationByStore(stores[0])
+                    Log.i(TAG, "Set destination as : ${stores[0]}")
+                }
                 /////////////////////////////////////////////////////
             }
 
