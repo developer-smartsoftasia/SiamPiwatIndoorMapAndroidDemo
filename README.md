@@ -1,4 +1,4 @@
-# Demo : Siam Piwat MappedIn Indoor Map Android SDK
+# Siam Piwat MappedIn Indoor Map Android SDK
 
 ## Setup
 ### Gradle
