@@ -19,7 +19,7 @@ allprojects {
 ```
 dependencies {
   ...
-  implementation 'com.siampiwat:indoormapsdk:0.3.3'
+  implementation 'com.siampiwat:indoormapsdk:0.5.0'
 }
 
 ```
