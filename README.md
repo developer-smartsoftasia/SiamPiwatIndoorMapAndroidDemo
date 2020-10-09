@@ -300,6 +300,24 @@ var spwDepartmentStore = IndoorMapSDK.getInstance().getDepartmentStoreBySlug(SPW
 IndoorMapSDK.getInstance().getDepartmentStoreBySlug(spwDepartmentStore)
 ```
 
+#### - setEnableDeviceLocation()
+This function for setting the SDK to use device location
+
+##### Required Parameters
+| Name | Type | Description |
+| ---- | ---- | ------ |
+| enabled | Boolean | The flag of using device location |
+
+##### Code
+```
+IndoorMapSDK.getInstance().setEnableDeviceLocation(true)
+```
+
+##### Example
+```
+IndoorMapSDK.getInstance().setEnableDeviceLocation(true)
+```
+
 ### (2) View
 #### - Indoor Map
 To display the indoor map, create the activity class which inherits IndoorMapActivity. This activity must be call after the call the initialize() and getVenue() methods of SDK
